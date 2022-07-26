@@ -1,0 +1,20 @@
+{
+    "name": "innoraft/resume_builder",
+    "autoload": {
+        "psr-4": {
+            "Innoraft\\ResumeBuilder\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Piyush-innoraft",
+            "email": "piyush.pandey@innoraft.com"
+        }
+    ],
+    "autoload-dev":{
+        "psr-4": {
+            "app\\": "./"
+        }
+    },
+    "require": {}
+}

@@ -20,6 +20,10 @@ class ComposerStaticInit1d27c531c93340024604208812a2b780
             'Psr\\Http\\Client\\' => 16,
             'PHPMailer\\PHPMailer\\' => 20,
         ),
+        'H' => 
+        array (
+            'Hybridauth\\' => 11,
+        ),
         'G' => 
         array (
             'GuzzleHttp\\Psr7\\' => 16,
@@ -41,6 +45,10 @@ class ComposerStaticInit1d27c531c93340024604208812a2b780
         'PHPMailer\\PHPMailer\\' => 
         array (
             0 => __DIR__ . '/..' . '/phpmailer/phpmailer/src',
+        ),
+        'Hybridauth\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/hybridauth/hybridauth/src',
         ),
         'GuzzleHttp\\Psr7\\' => 
         array (

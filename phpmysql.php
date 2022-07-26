@@ -1,0 +1,35 @@
+<?php
+$servername = "piyush.com";
+$username = "root";
+$password = "Piyush@555";
+$dbname = "movieS";
+
+// Create connection
+$conn = new mysqli($servername, $username, $password, $dbname);
+// Check connection
+if ($conn->connect_error) {
+  die("Connection failed: " . $conn->connect_error);
+}
+
+$sql = "SELECT title, genre, release_year, director FROM movies";
+$result = $conn->query($sql);
+
+$row = $result->fetch_assoc();
+echo count($row);
+
+
+while($row = $result->fetch_assoc()) {
+echo $row["title"] . $row["genre"]. " " . $row["director"]. "<br>";
+}
+
+
+// if ($result->num_rows > 0) {
+//   // output data of each row
+//  while($row = $result->fetch_assoc()) {
+//     echo "id: " . $row["id"]. " - Name: " . $row["firstname"]. " " . $row["lastname"]. "<br>";
+//   }
+// } else {
+//   echo "0 results";
+// }
+$conn->close();
+?>

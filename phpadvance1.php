@@ -63,7 +63,7 @@
   require '/var/www/abc~/myclass.php';
   
   $host='https://ir-dev-d9.innoraft-sites.com';
-  for($i=0;$i<=15;$i++){
+  for($i=0;$i<=1;$i++){
   $obj=new assign1();
   $res=$obj->apicall('GET','https://ir-dev-d9.innoraft-sites.com/jsonapi/node/services');
   $json_objekat = $obj->decode($res);

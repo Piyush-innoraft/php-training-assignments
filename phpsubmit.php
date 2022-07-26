@@ -1,76 +1,31 @@
 
 
  <?php
-
-
-
-
-
 if(!empty($_POST['submit'])){
     $fname=$_POST['fname'];
     $lname=$_POST['lname']; 
     $number=$_POST['number'];
     $email=$_POST['email'];
     $image1="uploads/yoga.jpg";
-    
-    
-
-    
-    
-
-
-
-
-require("fpdf/fpdf.php");
-
-$pdf= new FPDF();
-
-$pdf->AddPage();
-
-$pdf->SetFont("Arial","",12);
-
-$pdf->Cell(0,10,"Registration details",1,1,"C");//width,height,text,border,nextline,center
-$pdf->Cell(45,10,$fname,1,0);
-$pdf->Cell(45,10,$lname,1,0);  
-$pdf->Cell(45,10,$number,1,0);
-$pdf->Cell(0,10,$email,1,1); 
-$pdf->Cell(0,20,"",0,1,"C");
-
-$pdf->Cell(0,10,"Scorecard",0,1,"L");
-
-
-  
-        $no_of_subjects = str_word_count($_POST["txt"]);
-        
-        $arr=(explode("\n",$_POST["txt"]));  
-    
-        
-        
-        $pdf->Cell(40,10,"Subjects",1,0,"C");
-           
-                
- 
-               
-                 
-
-                  
-                   for($i=0; $i<  $no_of_subjects;$i++)
-                   {
-                    $arr1=(explode("|",$arr[$i]));
-
-
-                   
-                
-                  
-                   
-                   $pdf->Cell(40,10,$arr1[0],1,0);
-                   
-                  
-                  
-                   }
-
-                   
-                   
+  require("fpdf/fpdf.php");
+  $pdf= new FPDF();
+  $pdf->AddPage();
+  $pdf->SetFont("Arial","",12);
+  $pdf->Cell(0,10,"Registration details",1,1,"C");//width,height,text,border,nextline,center
+  $pdf->Cell(45,10,$fname,1,0);
+  $pdf->Cell(45,10,$lname,1,0);  
+  $pdf->Cell(45,10,$number,1,0);
+  $pdf->Cell(0,10,$email,1,1); 
+  $pdf->Cell(0,20,"",0,1,"C");
+  $pdf->Cell(0,10,"Scorecard",0,1,"L");
+  $no_of_subjects = str_word_count($_POST["txt"]);
+  $arr=(explode("\n",$_POST["txt"]));  
+  $pdf->Cell(40,10,"Subjects",1,0,"C");
+  for($i=0; $i<  $no_of_subjects;$i++)
+  {
+    $arr1=(explode("|",$arr[$i]));
+    $pdf->Cell(40,10,$arr1[0],1,0);
+  }
                    $arr2=(explode("\n",$_POST["txt"])); 
                  
 
@@ -136,9 +91,6 @@ $pdf->Cell(0,10,"Scorecard",0,1,"L");
 
 
 $file=time(). '.pdf';
-
-
-
 $pdf->output($file,'D');
 }
 
@@ -209,14 +161,14 @@ if(isset($_FILES['image'])){
     
 
 
-    $value = move_uploaded_file($file_tmp, "uploads/".$file_name);
+    $value = move_uploaded_file($file_tmp, "images/".$file_name);
     
     
 
     $image=$_FILES['image']['name']; /* Displaying Image*/
       $img="uploads/".$image;
-      echo'<img src="'.$img.'">';
-      echo "<br>";
+      // echo'<img src="'.$img.'">';
+      // echo "<br>";
 }
 
 ?>

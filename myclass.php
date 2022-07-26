@@ -1,5 +1,6 @@
 <?php
- require './vendor/autoload.php';
+
+ require '/var/www/abc~/vendor/autoload.php';
  use GuzzleHttp\Client;
  use GuzzleHttp\Psr7\Request;
 class assign1{

@@ -112,7 +112,7 @@
         <div class="row ">
           <div class="col-12 text-center">
             <form method="post" class="mt-3" action="<?php echo $_SERVER['PHP_SELF']; ?>">
-              <textarea rows="4" cols="50" id="txt" name="txt"></textarea>
+              <textarea rows="4" cols="50" id="txt" placeholder="enter"name="txt" pattern="^[a-zA-Z]*$"></textarea>
               <button type="submit">Submit</button>
             </form>
           </div>

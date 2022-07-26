@@ -4,6 +4,11 @@ if($_SESSION['uname']!='admin')
 {
   exit("please log in");
 }
+function set_url( $url )
+{
+    echo("<script>history.replaceState({},'','$url');</script>");
+}
+set_url("http://piyush.com/home");;
 ?>
 <html>
     <head>
